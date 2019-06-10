@@ -71,14 +71,20 @@
 
   // Short way:
 
-  const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+  // const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
 
-  console.table(ordered);
+  // console.table(ordered);
 
 
 ////////////////////////Array.prototype.reduce()//////////////////////////
 
   // 4. How many years did all the inventors live?
+
+  const totalYears = inventors.reduce((total, inventor) => {
+    return total + (inventor.passed - inventor.year);
+  }, 0);
+
+  console.log(totalYears);
 
 
 //////////////////////////////Practice////////////////////////////////////    
@@ -94,3 +100,4 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
